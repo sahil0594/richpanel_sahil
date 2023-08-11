@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #130852;
+  }
+
+  .container {
+    border-radius:10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .card-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-details input {
+    width: calc(33.33% - 10px);
+  }
+
+  .order-summary {
+    margin-left: 90px;    
+   
+    padding: 10px;
+  }
+
+  .order-summary h2 {
+    margin-bottom: 10px;
+    width: 200px;
+    
+  }
+  #card{
+     width: 350px;
+  }
+  #expiry{
+   width: 50px;
+  }
+  #cvv{
+    width:28px;
+  }
+  .submit{
+    margin-top:45px ;
+     border-radius:7px;
+    background-color: rgb(8, 9, 104);
+    width:200px;
+    height:50px;
+  
+    
+  }
+  .submit h3{
+    color: #fff;
+    
+  }
+  .order-item{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .order-item p{
+    font-weight: bold;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div>
+  <h1>Payment Form</h1>
+  <form method="POST" action="/payment">
+    
+    <div class="form-group">
+      <div class="card-details">
+        <input type="text" id="card_name" name="card_name" placeholder="Card Name" required>
+        <input type="text" id="card_number" name="card_number" placeholder="Card Number" required>
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+        <input type="text" id="custumer_id" name="custumer_id" placeholder="custumer_id" style="display: none;" required>
+      </div>
+    </div>
+    <button class="submit" type="submit" ><h3>Confirm Payment</h3></button>
+  </form>
+</div>
+
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <div class="order-item">
+        <p>Plane Name</p>
+        <p id="planid"> Basic</p>
+    </div>
+    <div class="order-item">
+        <p>Billing Cycle</p>
+        <p>Monthly</p>
+    </div>
+    <div class="order-item">
+        <p>Plan Price</p>
+        <p id="priceid">200/mo</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+
+  function datafetch(){
+    // console.log('in alert');
+    temp = window.location.href.split("?")[1]
+    temp = temp.split("&")[0];
+    document.getElementById('planid').innerText = temp.split("=")[1] 
+
+    temp = window.location.href.split("?")[1]
+    temp = temp.split("&")[1];
+    document.getElementById('priceid').innerText = temp.split("=")[1] 
+
+    temp = window.location.href.split("?")[1]
+    temp = temp.split("&")[2];
+    document.getElementById('custumer_id').value = temp.split("=")[1]; 
+
+
+    // if(temp.split("=")[0] == "alert"){
+    //   alert(temp.split("=")[1]);
+    // }
+
+  }
+  datafetch();
+
+  </script>

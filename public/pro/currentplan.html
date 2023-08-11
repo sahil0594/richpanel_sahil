@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Plan Details</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1c0c74;
+  }
+
+  .container {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 500px;;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .plan-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .plan-details p {
+    margin: 0;
+  }
+
+  .plan-name {
+    color: rgb(90, 94, 92);
+    padding: 2px;
+  }
+  .plan-type{
+    font-weight: bold;
+    padding:3px ;
+    font-size:20px;
+  }
+
+  .plan-price {
+    color: #007bff;
+    font-weight: bold;
+  }
+
+  .plan-features {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  
+  .feature-desc{
+    font-weight: bold;
+    background-color: rgb(207, 219, 215);
+    padding: 3px;
+    margin-top: 20px;
+    border-radius: 7px;
+    
+  }
+  .feature-desc p{
+    margin-left:8px;
+  }
+  .feature-but{
+    border-radius: 4px;
+  
+    width:140px ;
+    border: 2px solid blue;
+  }
+  .feature-but p{
+    color: #1c0c74;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Current Plan Details</h1>
+  <div class="plan-type">Basic</div>
+  <div class="plan-details">
+    <p class="plan-name"> Phone+Tablet</p>
+    <p class="plan-price">Active</p>
+  </div>
+  <div class="plan-features">
+    <div class="feature">
+      
+     <h1> $2,000/yr</h1>
+    </div>
+    <div >
+        <button class="feature-but"><p>Change Plan</p></button>
+    </div>
+    <div class="feature-desc">
+     
+     <p>Your subscription has started on 10th Aug and will auto renew on Jul 12th,2023</p>
+    </div>
+ 
+   
+  </div>
+</div>
+</body>
+</html>
